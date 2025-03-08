@@ -4,36 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thoughts Dump!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="homepage-container">
-        <div class="header">
-            <h1>Thoughts Dump!</h1>
+    <div class="container">
+        <!-- Main Title -->
+        <header>
+            <h1>Thoughts Dump</h1>
             <p class="subheading">Welcome to the Thoughts Dump — where no thought is too random, too weird, or too awkward to share.</p>
+        </header>
+
+        <!-- Thought Box Section -->
+        <div class="thought-box">
+            <textarea id="message" placeholder="Dump your thoughts here" name="message"></textarea>
+            <div class="note-clips">
+                <div class="clip clip-top"></div>
+                <div class="clip clip-bottom"></div>
+            </div>
         </div>
 
-        <div class="thought-box-container">
-            <form id="messageForm">
-                <textarea id="message" name="message" required placeholder="Dump your thoughts here!"></textarea>
-                <div class="checkbox-group">
-                    <input type="checkbox" id="anonymous" name="anonymous">
-                    <label for="anonymous">I want to remain anonymous</label>
-                </div>
-
-                <!-- Email field with reassurance message -->
-                <label for="email" id="emailLabel" style="display: none;">Your Email (Optional):</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email if you'd like a personal reply" style="display: none;">
-                <p id="emailReassurance" style="display: none; font-size: 0.9rem; color: #666; margin-top: 5px;">Your thoughts are safe here. If you leave your email, it will only be used to send you a personal reply. We keep everything private.</p>
-
-                <div class="checkbox-group">
-                    <input type="checkbox" id="tiktok" name="tiktok">
-                    <label for="tiktok">I'd like a response in a TikTok video (anonymously)</label>
-                </div>
-                <button type="submit" class="cta-button">Dump it!</button>
-            </form>
+        <!-- Options for Response -->
+        <div class="options">
+            <label>
+                <input type="radio" name="response" value="email" /> Enter your email
+                <div class="email-info">Your thoughts are safe here. If you leave your email, it will only be used to send you a personal reply. We keep everything private.</div>
+                <input type="email" name="email" placeholder="Enter your email here">
+            </label>
+            <label>
+                <input type="radio" name="response" value="tiktok" /> Post on TikTok for Public Response/Advice (anonymous)
+            </label>
+            <label>
+                <input type="radio" name="response" value="anonymous" /> Post it anonymously
+            </label>
         </div>
 
+        <!-- Submit Button -->
+        <button type="submit" class="cta-button" onclick="submitForm()">Dump it!</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
