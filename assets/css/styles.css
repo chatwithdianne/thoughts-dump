@@ -1,0 +1,167 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f9f9f9; /* Light background for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+/* Homepage Container */
+.homepage-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* Clean, minimal background */
+}
+
+/* Kate Spade-Inspired Pattern */
+.homepage-container {
+    background-image: url('kate_spade_pattern.png'); /* Add your pattern file */
+    background-repeat: repeat;
+    background-size: 50px; /* Adjust for size of pattern */
+}
+
+/* Header Section */
+.header h1 {
+    font-size: 3.5rem;
+    color: #ff4d6d; /* Bold Pink (Kate Spade-inspired) */
+    font-family: 'Dancing Script', cursive; /* Fun, handwritten font */
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+/* Fun Subheading */
+.subheading {
+    font-size: 1.25rem;
+    color: #333;
+    margin-top: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    max-width: 90%;
+    margin: auto;
+}
+
+/* Thought Box (Message Area) */
+.thought-box-container {
+    width: 70%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: left;
+    position: relative;
+    box-sizing: border-box;
+    background: #f4f4f4; /* Slightly darker paper-like background */
+    border: 2px solid #ff4d6d; /* Pink border */
+}
+
+/* Handwritten Font for Message Box */
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-family: 'Dancing Script', cursive; /* Handwritten font for playfulness */
+    border-radius: 8px;
+    border: 1px solid #ff4d6d; /* Pink border */
+    background-color: #ffffff;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+/* Input Fields */
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    margin: 10px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+/* Playful Button */
+.cta-button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background-color: #ff4d6d; /* Bold Pink */
+    color: #fff;
+    font-size: 24px; /* Larger size for playfulness */
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #f1a7c1; /* Lighter Pink */
+    transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+/* Coffee Donation Section */
+.coffee-section {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.coffee-section img {
+    width: 120px;
+    height: 120px;
+}
+
+/* Adding Playful Icons */
+.icon {
+    font-size: 2rem;
+    color: #ff4d6d;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.icon:hover {
+    color: #ff8a80; /* Coral */
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .homepage-container {
+        padding: 20px;
+    }
+    .thought-box-container {
+        width: 90%;
+    }
+}
+
+/* Subtle Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.header h1, .subheading, .thought-box-container {
+    animation: fadeIn 1s ease-in-out;
+}
+
