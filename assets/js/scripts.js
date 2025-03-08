@@ -1,19 +1,30 @@
-// Form submission handling and redirection to confirmation page
+// Function to handle form submission and redirect
 function submitForm() {
-    const message = document.getElementById('message').value;
-    const email = document.querySelector('input[name="email"]').value;
-    const response = document.querySelector('input[name="response"]:checked').value;
-
+    const message = document.getElementById('message').value;  // Message content
+    const email = document.querySelector('input[name="email"]').value;  // Email input value
+    const response = document.querySelector('input[name="response"]:checked').value;  // Selected response type
+    
+    // If no message is entered
     if (message.trim() === '') {
         alert('Please enter some thoughts!');
         return;
     }
-
-    // Save the data, maybe in a database or session, or handle it as needed
+    
+    // For demonstration purposes, log to the console
     console.log('Message:', message);
     console.log('Email:', email);
     console.log('Response:', response);
 
     // Redirect to confirmation page
-    window.location.href = 'confirmation.html'; // Redirect to the confirmation page
+    window.location.href = 'confirmation.html';  // Redirection after form submission
 }
+
+// Optional: Automatically show the admin login if needed for testing
+document.addEventListener('DOMContentLoaded', function() {
+    const isLoggedIn = false; // Replace this with actual login check if needed
+    const adminLogin = document.getElementById('adminLogin');
+    
+    if (isLoggedIn) {
+        adminLogin.style.display = 'block';  // Show admin login if logged in
+    }
+});
