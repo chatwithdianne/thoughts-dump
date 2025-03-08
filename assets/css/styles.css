@@ -1,167 +1,242 @@
-/* General Styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    background: #f9f9f9; /* Light background for contrast */
+/* Global Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Homepage Container */
-.homepage-container {
-    width: 100%;
-    height: 100vh;
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8; /* Light background color for comfort */
+    color: #333; /* Text color */
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Utility Classes */
+.container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     text-align: center;
     padding: 20px;
-    background-color: #ffffff; /* Clean, minimal background */
 }
 
-/* Kate Spade-Inspired Pattern */
-.homepage-container {
-    background-image: url('kate_spade_pattern.png'); /* Add your pattern file */
-    background-repeat: repeat;
-    background-size: 50px; /* Adjust for size of pattern */
+header, .content, footer {
+    width: 100%;
 }
 
 /* Header Section */
-.header h1 {
-    font-size: 3.5rem;
-    color: #ff4d6d; /* Bold Pink (Kate Spade-inspired) */
-    font-family: 'Dancing Script', cursive; /* Fun, handwritten font */
-    margin-bottom: 10px;
+header {
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive; /* Playful handwriting font */
+    font-size: 4rem; /* Large title */
+    color: #ff4d6d; /* Kate Spade-inspired bold pink */
     letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
-/* Fun Subheading */
-.subheading {
+header .subheading {
     font-size: 1.25rem;
-    color: #333;
-    margin-top: 0;
-    font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    max-width: 90%;
-    margin: auto;
+    color: #333;
+    max-width: 80%;
+    margin: 0 auto;
+    padding-top: 10px;
 }
 
-/* Thought Box (Message Area) */
-.thought-box-container {
-    width: 70%;
+/* Thought Box Section */
+.thought-box {
+    width: 80%;
     max-width: 600px;
-    background-color: #ffffff;
+    background-color: #fff;
+    border: 2px solid #ff4d6d; /* Pink border for chic look */
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
-    box-sizing: border-box;
-    background: #f4f4f4; /* Slightly darker paper-like background */
-    border: 2px solid #ff4d6d; /* Pink border */
+    margin-bottom: 40px;
 }
 
-/* Handwritten Font for Message Box */
+/* Textarea as a Note Pad */
 textarea {
     width: 100%;
     height: 150px;
     padding: 15px;
     font-size: 1.2rem;
-    font-family: 'Dancing Script', cursive; /* Handwritten font for playfulness */
+    font-family: 'Dancing Script', cursive; /* Handwritten font */
+    background-color: #fff;
+    border: none;
     border-radius: 8px;
-    border: 1px solid #ff4d6d; /* Pink border */
-    background-color: #ffffff;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
     resize: vertical;
-    box-sizing: border-box;
+    outline: none;
+    transition: border 0.3s ease;
 }
 
-/* Input Fields */
-input[type="email"] {
+textarea:focus {
+    border: 2px solid #ff4d6d; /* Highlight border on focus */
+}
+
+/* Note Clips (Visual Enhancement) */
+.note-clips .clip {
+    position: absolute;
+    background-color: #ff4d6d;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.clip-top {
+    top: -15px;
+    left: 10%;
+}
+
+.clip-bottom {
+    bottom: -15px;
+    left: 70%;
+}
+
+/* Radio Buttons (Options for Submission) */
+.options {
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.options input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #ff4d6d; /* Kate Spade-inspired pink accent for radio buttons */
+}
+
+.options label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.options input[type="email"] {
     width: 100%;
     padding: 10px;
-    margin-top: 10px;
-    font-size: 16px;
-    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 1rem;
     border: 1px solid #ddd;
-    transition: all 0.3s ease;
+    border-radius: 5px;
+    transition: border 0.3s ease;
 }
 
-/* Checkbox Group */
-.checkbox-group {
-    margin: 10px 0;
-    font-family: 'Roboto', sans-serif;
+.options input[type="email"]:focus {
+    border-color: #ff4d6d; /* Focus effect for email input */
 }
 
-.checkbox-group input {
-    margin-right: 10px;
-}
-
-/* Playful Button */
+/* CTA Button Styling */
 .cta-button {
-    display: block;
-    width: 100%;
-    padding: 20px;
-    background-color: #ff4d6d; /* Bold Pink */
+    width: 220px;
+    padding: 18px 0;
+    background-color: #ff4d6d; /* Bold pink background */
     color: #fff;
-    font-size: 24px; /* Larger size for playfulness */
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
     font-weight: bold;
-    transition: all 0.3s ease;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
 }
 
 .cta-button:hover {
-    background-color: #f1a7c1; /* Lighter Pink */
-    transform: scale(1.1); /* Slight scaling effect on hover */
+    background-color: #f1a7c1; /* Lighter pink */
+    transform: scale(1.05); /* Button enlarges slightly on hover */
 }
 
-/* Coffee Donation Section */
+.cta-button:focus {
+    outline: none;
+}
+
+/* Confirmation Page */
+.confirmation-message {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Share Section (Social Media Links) */
+.share-section {
+    margin-top: 40px;
+}
+
+.share-section p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Hover effect for social media icons */
+}
+
+/* Coffee Section (Small and Cute) */
 .coffee-section {
     text-align: center;
-    margin-top: 30px;
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 20px;
 }
 
 .coffee-section img {
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
 }
 
-/* Adding Playful Icons */
-.icon {
-    font-size: 2rem;
-    color: #ff4d6d;
-    margin: 10px;
-    transition: all 0.3s ease;
-}
-
-.icon:hover {
-    color: #ff8a80; /* Coral */
-    transform: scale(1.2);
+.coffee-section p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
-    .homepage-container {
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+
+    .thought-box {
+        width: 90%;
         padding: 20px;
     }
-    .thought-box-container {
+
+    .cta-button {
+        width: 80%;
+        font-size: 1.2rem;
+    }
+
+    .options {
         width: 90%;
     }
-}
 
-/* Subtle Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    .coffee-section {
+        font-size: 0.9rem;
+    }
 }
-
-.header h1, .subheading, .thought-box-container {
-    animation: fadeIn 1s ease-in-out;
-}
-
