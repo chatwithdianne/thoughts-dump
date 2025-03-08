@@ -4,13 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thoughts Dump!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Patrick Hand', cursive; /* Fun, handwriting-like font */
+            background: linear-gradient(135deg, #F7C6D4, #D8E9F1); /* Pastel gradient background */
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* Full Screen Layout */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 40px;
+        }
+
+        /* Header Section */
+        header {
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-family: 'Patrick Hand', cursive; /* Playful handwritten font */
+            font-size: 4rem;
+            color: #FFB6C1; /* Soft pink */
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        header .subheading {
+            font-size: 1.5rem;
+            color: #6D6D6D; /* Slightly darker gray */
+            font-weight: bold;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        /* Thought Box Section */
+        .thought-box {
+            width: 90%;
+            max-width: 600px;
+            background-color: #fff;
+            border: 3px dashed #F5A3B1; /* Light dashed border */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 15px;
+            font-size: 1.3rem;
+            font-family: 'Patrick Hand', cursive;
+            background-color: #FFF1F3; /* Light pink background */
+            border: none;
+            border-radius: 8px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            resize: vertical;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        textarea:focus {
+            border: 2px solid #FFB6C1; /* Soft pink focus */
+        }
+
+        /* Radio Buttons (Options for Submission) */
+        .options {
+            width: 90%;
+            max-width: 600px;
+            margin-bottom: 30px;
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #6D6D6D;
+        }
+
+        .options input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 1rem;
+            border: 2px solid #E6C4D7; /* Light purple border */
+            border-radius: 5px;
+        }
+
+        /* CTA Button Styling */
+        .cta-button {
+            width: 250px;
+            padding: 18px 0;
+            background-color: #F6A4D7; /* Pastel pink */
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #FF8DAA; /* Slightly darker pink */
+            transform: scale(1.05);
+        }
+
+        .cta-button:focus {
+            outline: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3rem;
+            }
+
+            .thought-box {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .cta-button {
+                width: 80%;
+                font-size: 1.4rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Admin Login Link (Hidden Initially) -->
-    <a href="admin-login.html" class="admin-login" id="adminLogin">Admin Login</a>
 
     <div class="container">
         <!-- Main Title -->
@@ -22,10 +163,6 @@
         <!-- Thought Box Section -->
         <div class="thought-box">
             <textarea id="message" placeholder="Dump your thoughts here" name="message"></textarea>
-            <div class="note-clips">
-                <div class="clip clip-top"></div>
-                <div class="clip clip-bottom"></div>
-            </div>
         </div>
 
         <!-- Options for Response -->
@@ -47,7 +184,23 @@
         <button type="submit" class="cta-button" onclick="submitForm()">Dump it!</button>
     </div>
 
-    <!-- Link to the JavaScript file -->
-    <script src="script.js"></script> 
+    <script>
+        // Form submission handling and redirection to confirmation page
+        function submitForm() {
+            const message = document.getElementById('message').value;  // Message content
+            const email = document.querySelector('input[name="email"]').value;  // Email input value
+            const response = document.querySelector('input[name="response"]:checked')?.value;  // Selected response type
+            
+            // If no message is entered
+            if (!message.trim()) {
+                alert('Please enter some thoughts!');
+                return;
+            }
+
+            // Redirect to confirmation page after form submission
+            window.location.href = 'confirmation.html';  // Redirection to the confirmation page
+        }
+    </script>
+
 </body>
 </html>
